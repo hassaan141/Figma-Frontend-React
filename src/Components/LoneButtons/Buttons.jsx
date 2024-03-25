@@ -12,7 +12,7 @@ const NavItem = ({ icon }) => (
 
 const Buttons =()=> {
     return (
-      <div className = 'buttons'>
+      <div className = 'buttons1'>
         <button className = 'locations'>
             <NavItem icon={mappin}/>
             Locations

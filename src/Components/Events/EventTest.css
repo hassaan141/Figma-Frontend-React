@@ -6,8 +6,12 @@
   margin-left: 3.5rem;
   border-radius: 1rem;
   position: fixed;
+  /* display: flex; */
   right: 1rem;
   top: 0.8rem;
+  align-items: center;
+  justify-content: center;
+  
 }
 
 .heading{
@@ -17,11 +21,56 @@
   margin: 0.5rem 0.9rem
 }
 
-.img{
+img{
   background: #151517;
 
 }
 
 .title{
-  background-color: #151517;;
+  background-color: #151517;
+}
+
+.buttons2{
+  display: flex;
+align-items: center;
+gap: 1rem;
+/* align-self: stretch; */
+padding-left: 2rem;
+margin-top: 1rem;
+background-color: #151517;
+
+}
+
+.addCamera{
+  display: flex;
+padding: 8px 16px;
+justify-content: center;
+align-items: center;
+/* gap: 10px; */
+border-radius: 6px;
+background: var(--Green-darkmode-accentcolor-001, #39BA25);
+font-size: 0.8rem;
+}
+
+.connectCamera{
+  display: flex;
+  padding: 8px 16px;
+justify-content: center;
+align-items: center;
+/* gap: 10px; */
+color:white;
+border-radius: 6px;
+border: 1px solid var(--Black-darkmode-widgetborders-003, #29292C);
+background: var(--Black-darkmode-widgetsurface-002, #151517);
+font-size: 0.8rem;
+
+}
+
+
+.list{
+  border: 1px solid red;
+  height: 70%;
+  width: 90%;
+margin-left: 5%;
+  background-color: #151517;
 }
