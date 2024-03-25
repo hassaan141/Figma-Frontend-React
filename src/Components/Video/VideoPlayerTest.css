@@ -1,0 +1,13 @@
+.box{
+  margin-left: 7.5rem;
+  margin-top: 6.5rem;
+  background-color: #151517;
+  height: 47rem;
+  width: 80rem;
+  border-radius: 1rem;
+}
+
+.img{
+  margin-left: 28%;
+  margin-top: 10%;
+}

@@ -1,25 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import { Routes, Route } from 'react-router-dom';
+import Dashboard from './Pages/Dashboard';
+import Analytics from './Pages/Analytics';
+import Settings from './Pages/Settings';
+import Monitor from './Pages/Monitor';
+import Shield from './Pages/Shield'
+
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+      <Routes>
+        <Route path="/" element={<Dashboard/>}/>
+        <Route path="/analytics" element={<Analytics/>}/>
+        <Route path="/settings" element={<Settings/>}/>
+        <Route path="/monitor" element={<Monitor/>}/>
+        <Route path="/shield" element={<Shield/>}/>
+      </Routes>
+  )
 }
 
 export default App;
