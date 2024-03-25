@@ -1,9 +1,15 @@
 import React from 'react'
 import './EventTest.css'
 import img from './trash-2.svg'
+import cameraicon from './wall-camare.svg'; 
 
 
 function EventTest() {
+//   const NavItem = ({ icon }) => (
+//     <div name='dateLine'>
+//       <img src={icon} alt='' />
+//     </div>
+//   );
   return (
     <div className='eventBox'>
       <div className='heading'>
@@ -11,19 +17,28 @@ function EventTest() {
         <img src={img} alt="" />
       </div>
       <div className='list'>
-        <div className="table-container">
-          <div className="table-header">
-            <span>Camera</span>
-            <span>Monitors</span>
-            <span>Intersection</span>
-            </div>
-          <div className="table-body">
-          <div className="no-data-message">
-          <img src="/path-to-your-icon/no-camera-icon.svg" alt="No Cameras" />
-          <span>No Cameras</span>
-        </div>
-      </div>
-    </div>
+      <table className="table-container">
+      <thead>
+        <tr className="camera-header">
+          <th>
+            <label className="header-item">
+              <input type="checkbox" className="camera-checkbox" />
+              Camera
+            </label>
+          </th>
+          <th>Monitors</th>
+          <th>Intersection</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colSpan="3" className="no-data-message">
+            <img src={cameraicon} alt="No Cameras" />
+            No Cameras
+          </td>
+        </tr>
+      </tbody>
+    </table>
       </div>
       <div className='buttons2'>
       <button className='connectCamera'>
