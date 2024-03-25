@@ -3,6 +3,7 @@ import Navbar from '../Components/Navbar/Navbar';
 import Top from '../Components/Top/top';
 import VideoPlayerTest from '../Components/Video/VideoPlayerTest';
 import EventTest from '../Components/Events/EventTest';
+import Buttons from '../Components/LoneButtons/Buttons'
 
 
 function Dashboard() {
@@ -10,12 +11,9 @@ function Dashboard() {
     <div>
     <Top/>
     <Navbar/>
-    
-
-    <div style={{display: 'flex'}}>
-      <VideoPlayerTest/>
-      <EventTest/>
-    </div>
+    <Buttons/>
+    <VideoPlayerTest/>
+    <EventTest/>
     </div>
   )
 }

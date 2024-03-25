@@ -1,7 +1,27 @@
 .eventBox{
   background: #151517;
-  height: 100rem;
-  width: 30rem;
-  margin-left: 90rem;
-  margin-bottom: 20rem;
+  height: 85%;
+  width: 22%;
+  margin-top: 4.5rem;
+  margin-left: 3.5rem;
+  border-radius: 1rem;
+  position: fixed;
+  right: 1rem;
+  top: 0.8rem;
+}
+
+.heading{
+  background: #151517;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0.9rem
+}
+
+.img{
+  background: #151517;
+
+}
+
+.title{
+  background-color: #151517;;
 }

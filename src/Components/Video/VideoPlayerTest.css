@@ -1,13 +1,21 @@
 .box{
-  margin-left: 7.5rem;
-  margin-top: 6.5rem;
+  
   background-color: #151517;
-  height: 47rem;
-  width: 80rem;
+  border: 1px solid #494949;
   border-radius: 1rem;
+  justify-content:center;
+  margin-top: 1%;
+  display: flex;
+  position: fixed;
+  width: 70%;
+  top: 6.8rem;
+  left: 5rem;
+  height: 78%;
 }
 
-.img{
-  margin-left: 28%;
-  margin-top: 10%;
+.img {
+  width: 35%; /* Set the width of the image to 50% of its parent element */
+  height: 50%; /* Set the height to auto to maintain the aspect ratio */
+  padding-top: 6rem;
+  background-color: #151517;
 }
