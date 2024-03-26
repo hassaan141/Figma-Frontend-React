@@ -111,12 +111,15 @@ margin-left: 5%;
 }
 
 .no-data-message {
-  /* display: flex; 
-  position: fixed; */
+  display: flex; 
   align-items: center;
-  gap: 8px; 
-  background-color: #151517;
-  border: 1px solid red;
+  background-color: #5a5a5a;
+  border-radius: 8px;
+  height: 2rem;
+  gap: 10px;
+  width: 16rem;
+  font-weight: 100;
+  font-size: small;
   
 }
 
@@ -165,3 +168,23 @@ margin-left: 5%;
   background-color: #151517;
 
 } */
+
+
+.table-container tr {
+
+  background-color: #151517;
+}
+
+.table-container th
+{
+  height: 2rem
+}
+
+.table-container td
+{
+  background-color: #151517;
+}
+
+.header-item{
+  background-color: #151517;
+}
