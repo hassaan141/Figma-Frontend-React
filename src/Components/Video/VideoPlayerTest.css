@@ -8,15 +8,15 @@
   display: flex;
   position: fixed;
   width: 70%;
-  top: 6.8rem;
-  left: 5rem;
-  height: 78%;
+  top: 7.2rem;
+  left: 7.2rem;
+  height: 84.5%;
 }
 
 .img {
   width: 35%; /* Set the width of the image to 50% of its parent element */
   height: 50%; /* Set the height to auto to maintain the aspect ratio */
-  padding-top: 6rem;
+  padding-top: 9rem;
   background-color: #151517;
 }
 

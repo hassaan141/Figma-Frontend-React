@@ -1,16 +1,16 @@
 .eventBox{
   background: #151517;
-  height: 85%;
+  height: 89.5%;
   width: 22%;
   margin-top: 4.5rem;
   margin-left: 3.5rem;
   border-radius: 1rem;
   position: fixed;
-  /* display: flex; */
   right: 1rem;
   top: 0.8rem;
   align-items: center;
   justify-content: center;
+  border: 1px white solid;
   
 }
 
@@ -28,7 +28,7 @@ img{
 
 .table-container{
   border: 1px white solid;
-  height: 20rem
+  height: 100vh;
 } 
 .title{
   background: #151517;
@@ -37,12 +37,14 @@ img{
 
 .buttons2{
   display: flex;
+  position: fixed;
 align-items: center;
 gap: 1rem;
-/* align-self: stretch; */
-padding-left: 2rem;
-margin-top: 1rem;
+/* padding-left: 2rem;
+margin-top: 1rem; */
 background-color: #151517;
+bottom: 2%;
+right: 5%;
 
 }
 
@@ -78,14 +80,6 @@ font-size: 0.8rem;
 margin-left: 5%;
   background-color: #151517;
 }
-
-
-
-
-
-
-
-
 
 .table-container {
   color: white;
@@ -123,11 +117,6 @@ margin-left: 5%;
   
 }
 
-/* .no-data-message img {
-  height: 24px; 
-  background-color: #151517;
-
-} */
 
 .camera-header th {
   font-size: 12px; 
@@ -138,46 +127,17 @@ margin-left: 5%;
 
 }
 
-/* .header-item{
-  background-color: #151517;
-} */
-
-/* .camera-checkbox{
-
-  appearance: none; 
-  background-color: #151517; 
-  border: 1px solid white; 
-  cursor: pointer; 
-  width: 15px; 
-  height: 15px; 
-  vertical-align: middle; 
-  border-radius: 0.2rem;
-  margin-right: 0.5rem;
-} */
-
-.table-container {
-  width: 100%; 
-  table-layout: fixed; 
-  background-color: #151517;
-}
-
-/* .camera-header th {
-  width: 33.3333%; 
-  font-size: 12px;
-  text-align: center;
-  background-color: #151517;
-
-} */
-
-
 .table-container tr {
 
   background-color: #151517;
+  font-size: 12px;
+  text-align: center;
 }
 
 .table-container th
 {
-  height: 2rem
+  height: 2rem;
+  width: 3rem
 }
 
 .table-container td
@@ -187,4 +147,25 @@ margin-left: 5%;
 
 .header-item{
   background-color: #151517;
+}
+
+
+
+.table-container {
+  display: block;
+  max-height: 400px; /* Adjust this value as needed */
+  overflow-y: auto;
+  width: 100%;
+}
+
+.table-container thead, .table-container tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* Ensures consistent column widths */
+}
+
+
+.camera-checkbox{
+  width: 10px;
+  height: 10px;
 }
