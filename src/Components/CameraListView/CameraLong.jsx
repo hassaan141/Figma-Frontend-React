@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './EventTest.css';
+import './CameraLong.css';
 import img from './trash-2.svg';
 import cameraicon from './wall-camare.svg';
 import AddCameraModal from "../Camera/CameraModal";
 import greencircle from './greencircle.png';
 import redcircle from './redcircle.png';
 
-function EventTest() {
+function CameraLong() {
   const [showAddCamera, setShowAddCamera] = useState(false);
   const [rows, setRows] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
@@ -109,4 +109,4 @@ function EventTest() {
   );
 }
 
-export default EventTest;
+export default CameraLong;

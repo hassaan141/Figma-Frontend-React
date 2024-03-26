@@ -2,7 +2,7 @@ import React from 'react'
 import Navbar from '../Components/Navbar/Navbar';
 import Top from '../Components/Top/top';
 import VideoPlayerTest from '../Components/Video/VideoPlayerTest';
-import EventTest from '../Components/Events/EventTest';
+import CameraLong from '../Components/CameraListView/CameraLong';
 import Buttons from '../Components/LoneButtons/Buttons'
 
 
@@ -13,7 +13,7 @@ function Dashboard() {
     <Navbar/>
     <Buttons/>
     <VideoPlayerTest/>
-    <EventTest/>
+    <CameraLong/>
     </div>
   )
 }

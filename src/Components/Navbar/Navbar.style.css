@@ -1,7 +1,7 @@
 :root {
   --background-color: #151517; /* Black background for the navbar */
   --icon-color: #fff; /* White color for the icons */
-  --icon-size: 1rem; /* Standard icon size */
+  --icon-size: 1.5rem; /* Standard icon size */
   --nav-item-gap: 0.3rem; /* Space between nav items */
   --logout-icon-size: 6rem; /* Size of the logout icon */
   --logout-bg: #29292c; /* Logout background, same as nav for uniform color */
