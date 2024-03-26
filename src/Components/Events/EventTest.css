@@ -122,9 +122,9 @@ margin-left: 5%;
 .camera-header th {
   font-size: 12px; 
   text-align: center; 
-  flex: 1; 
+  /* flex: 1;  */
   background-color: #151517;
-  border-bottom: 2px solid #ffffff;
+  border-bottom: 2px solid #494949;
 
 }
 
