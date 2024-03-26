@@ -49,7 +49,7 @@ function EventTest() {
     <div className='eventBox'>
       <div className='heading'>
         <h3 className='title'>Camera Monitoring List</h3>
-        <img src={img} alt="" />
+        <img className='trashimg' src={img} alt="" />
       </div>
       <div className='list'>
         <table className="table-container">
