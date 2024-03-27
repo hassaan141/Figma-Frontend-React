@@ -12,15 +12,18 @@ function VideoFrameSender({ videoElement, containerSize, videoId }) {
     if (!videoElement) console.log(videoElement); // Check if videoElement is defined
 
 
-    console.log("Video Element: " + videoElement);
-    console.log("container size: " + containerSize);
-    console.log("Video ID: " + videoId);
+    // console.log("Video Element: " + videoElement);
+    // console.log("container size: " + containerSize);
+    // console.log("Video ID: " + videoId);
     const canvas = document.createElement('canvas');
     canvas.width = videoElement.videoWidth;
     canvas.height = videoElement.videoHeight;
     const ctx = canvas.getContext('2d');
     ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
 
+    // console.log("VIDEO ELEMENT:" + videoElement)
+    // console.log("CANVAS WIDTH: " + videoElement.videoWidth)
+    // console.log("CANVAS HEIGHT: " + videoElement.videoHeight)
     canvas.toBlob(blob => {
       const formData = new FormData();
       formData.append('frame', blob, 'frame.jpg');
@@ -28,17 +31,21 @@ function VideoFrameSender({ videoElement, containerSize, videoId }) {
       formData.append('width', containerSize.width.toString());
       formData.append('height', containerSize.height.toString());
 
+      // console.log("VIDEO ID: " + videoId);
+      // console.log("CONTAINER WIDTH :" + containerSize.width.toString());
+      // console.log("CONTAINER HEIGHT : " + containerSize.height.toString());
+
 
       fetch('http://localhost:5000/process', {
         method: 'POST',
         body: formData,
       })
       .then(response => {
-        // console.log(response);
+        // console.log("RESPONSE" + response.json());
         return response.json();
     })
       .then(data => {
-        //console.log(data);
+        // console.log("DATA" + data);
         setResponseData(data)
         if (data.success && data.data && data.data.is_congestion) {
           console.log('Congestion is true for videoId:', videoId);

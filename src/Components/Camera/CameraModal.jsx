@@ -13,16 +13,6 @@ function AddCameraModal({ show, onClose, addCamera }) {
       const { name, value } = e.target;
       setCameraData({ ...cameraData, [name]: value });
     };
-    // const handleCheckboxChange = (e) => {
-    //   const { value, checked } = e.target;
-    //   setCameraData((prevData) => {
-    //     if (checked) {
-    //       return { ...prevData, monitor: [...prevData.monitor, value] };
-    //     } else {
-    //       return { ...prevData, monitor: prevData.monitor.filter((item) => item !== value) };
-    //     }
-    //   });
-    // };
   
     const handleSubmit = (e) => {
       e.preventDefault();
@@ -42,7 +32,7 @@ function AddCameraModal({ show, onClose, addCamera }) {
             <h3 className="paragraph" >Camera Name</h3>
             <div className="paragraph">
                <select className='dropDown' name="camera" value={cameraData.camera} onChange={handleChange} >
-                <option value="" disabled selected>Select your option</option>
+                <option value="" disabled>Select your option</option>
                 <option value="Camera 1">Camera 1</option>
                 <option value="Camera 2">Camera 2</option>
                 <option value="Camera 3">Camera 3</option>
