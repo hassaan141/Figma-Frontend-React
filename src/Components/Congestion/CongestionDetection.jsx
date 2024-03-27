@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './CongestionDetection.css';
 import alerttriangle from './alert-triangle.png';
 
@@ -7,13 +7,12 @@ function CongestionDetection() {
 
   return(
     <div className = 'detectedDiv'>
-    <div>
         <div className = 'headerandicon'>
             <img src={alerttriangle}/>
             <h1> Detected Congestion </h1>
         </div>
         <div className= 'congestionImg'>
-            <img/>
+            {/* <img/> */}
         </div>
         <div className= 'cameraNumber'>
 
@@ -29,8 +28,6 @@ function CongestionDetection() {
             <button> Clean Alert </button>
             <button> Contact Dispatch </button>
         </div>
-    </div>
-
     </div>
   )
 }

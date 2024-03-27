@@ -122,9 +122,9 @@ margin-left: 5%;
 .camera-header th {
   font-size: 12px; 
   text-align: center; 
-  /* flex: 1;  */
   background-color: #151517;
   border-bottom: 2px solid #494949;
+  height: 2rem;
 
 }
 
@@ -135,18 +135,8 @@ margin-left: 5%;
   text-align: center;
 }
 
-.table-container th
-{
-  height: 2rem;
-
-}
-
 .table-container td
 {
-  background-color: #151517;
-}
-
-.header-item{
   background-color: #151517;
 }
 
@@ -154,9 +144,9 @@ margin-left: 5%;
 
 .table-container {
   display: block;
-  max-height: 400px; /* Adjust this value as needed */
+  height: 80%; /* Adjust this value as needed */
   overflow-y: auto;
-  width: 100%;
+  width: 80%;
 }
 
 .table-container thead, .table-container tbody tr {
@@ -169,4 +159,18 @@ margin-left: 5%;
 .camera-checkbox{
   width: 10px;
   height: 10px;
+}
+
+.-Button{
+  background: red;       /* No background */
+  color: inherit;         /* Inherits the color from its parent */
+  border: none;           /* No border */
+  border-radius: 40px;             /* No padding */
+  font: inherit;          /* Inherits font from its parent */
+  font-size: 8px;
+
+}
+
+.header-item{
+  background-color: #151517;
 }

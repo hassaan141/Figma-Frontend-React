@@ -1,0 +1,12 @@
+.detectedDiv{
+    border: 1px solid var(--Black-darkmode-widgetborders-003, #29292C);
+background: var(--Black-darkmode-widgetsurface-002, #151517);
+
+position: fixed;
+top: 7rem;
+right: 0.5rem;
+width: 22%;
+margin-right: 0.5%;
+height: 40%;
+border-radius: 12px;
+}

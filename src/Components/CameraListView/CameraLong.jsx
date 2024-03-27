@@ -10,6 +10,7 @@ function CameraLong() {
   const [showAddCamera, setShowAddCamera] = useState(false);
   const [rows, setRows] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
+  const [showDelete, setShowDelete] = useState(false);
 
 
   const toggleAddCamera = () => {
@@ -19,6 +20,12 @@ function CameraLong() {
     setAllChecked(!allChecked); // Toggle the global checked state
     const updatedRows = rows.map(row => ({ ...row, isChecked: !allChecked }));
     setRows(updatedRows); // Apply the toggled state to all rows
+  };
+  const toggleShowDelete = () => {
+    setShowDelete(!showDelete);
+  };
+  const deleteRow = (id) => {
+    setRows(rows.filter(row => row.id !== id));
   };
 
   const addCamera = (cameraData) => {
@@ -49,9 +56,8 @@ function CameraLong() {
     <div className='eventBox'>
       <div className='heading'>
         <h3 className='title'>Camera Monitoring List</h3>
-        <img className='trashimg' src={img} alt="" />
+        <img className='trashimg' onClick={toggleShowDelete} src={img} alt="" />
       </div>
-      <div className='list'>
         <table className="table-container">
           <thead>
             <tr className="camera-header">
@@ -65,6 +71,7 @@ function CameraLong() {
               </th>
               <th>Monitors</th>
               <th>Intersection</th>
+              {showDelete && <th>Remove</th>}
             </tr>
           </thead>
           <tbody>
@@ -90,12 +97,16 @@ function CameraLong() {
                   </td>
                   <td>{row.monitor}</td>
                   <td>{row.intersection}</td>
+                  {showDelete && (
+                    <td>
+                      <button className='-Button' onClick={() => deleteRow(row.id)}> − </button>
+                    </td>
+                  )}
                 </tr>
               ))
             )}
           </tbody>
         </table>
-      </div>
       <div className='buttons2'>
         <button className='connectCamera'>Connect Camera</button>
         <button onClick={toggleAddCamera} className='addCamera'>Add Camera</button>
