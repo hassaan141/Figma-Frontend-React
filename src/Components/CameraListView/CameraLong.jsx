@@ -5,13 +5,13 @@ import cameraicon from './wall-camare.svg';
 import AddCameraModal from "../Camera/CameraModal";
 import greencircle from './greencircle.png';
 import redcircle from './redcircle.png';
+import {useData} from '../../send-backend/dataContext'
 
 function CameraLong() {
   const [showAddCamera, setShowAddCamera] = useState(false);
   const [rows, setRows] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
-
 
   const toggleAddCamera = () => {
     setShowAddCamera(!showAddCamera);
@@ -41,10 +41,12 @@ function CameraLong() {
     toggleAddCamera(); // Assuming this toggles the modal visibility
   };
 
-  // Function to toggle the isChecked property of a camera
+  const {toggleVideo} = useData();
+  
   const toggleCheckbox = (id) => {
-    const updatedRows = rows.map((row) => {
+    const updatedRows = rows.map((row, index) => {
       if (row.id === id) {
+        toggleVideo(index); // Toggle the selection in the context based on the row index
         return { ...row, isChecked: !row.isChecked };
       }
       return row;

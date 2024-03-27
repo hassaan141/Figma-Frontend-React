@@ -1,23 +1,61 @@
-.box{
-  
+/* Base box styling */
+.box {
   background-color: #151517;
   border: 1px solid #494949;
   border-radius: 1rem;
-  justify-content:center;
+  display: grid;
+  justify-content: center;
   margin-top: 1%;
-  display: flex;
   position: fixed;
   width: 70%;
   top: 7.2rem;
   left: 7.2rem;
   height: 84.5%;
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Styling for when only one video is selected */
+.box.video-1 {
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+}
+
+/* Styling for when two videos are selected */
+.box.video-2 {
+  grid-template-columns: repeat(2, 1fr); /* Two videos side by side */
+  grid-template-rows: 1fr;
+}
+
+/* Styling for when three videos are selected */
+.box.video-3 {
+  grid-template-columns: repeat(2, 1fr); /* Two in one row, one in the next */
+  grid-template-rows: 50% 50%;
+}
+
+/* Styling for when four videos are selected */
+.box.video-4 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
 }
 
 .img {
-  width: 35%; /* Set the width of the image to 50% of its parent element */
-  height: 50%; /* Set the height to auto to maintain the aspect ratio */
-  padding-top: 9rem;
-  background-color: #151517;
+  justify-self: center;
+  align-self: center;
+}
+
+.video1, .video2, .video3, .video4 {
+  position: relative;
+  display: flex;
+  justify-content: center; /* Center video horizontally */
+  align-items: center; /* Center video vertically */
+}
+
+.video1 video, .video2 video, .video3 video, .video4 video {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; /* Maintain aspect ratio without cropping */
+  margin: auto; /* Center the video within the div */
 }
 
 

@@ -4,10 +4,18 @@ const DataContext = createContext();
 
 export const DataProvider = ({ children }) => {
   const [centerData, setCenterData] = useState([]);
-  const [responseData, setResponseData] = useState(null); // Add this line
+  const [responseData, setResponseData] = useState(null); 
+  const [videoSelections, setVideoSelections] = useState([false, false, false, false]);
 
+  const toggleVideo = (index) => {
+    setVideoSelections(prev => {
+        const newSelections = [...prev];
+        newSelections[index] = !newSelections[index];
+        return newSelections;
+    });
+};
   return (
-    <DataContext.Provider value={{ centerData, setCenterData, responseData, setResponseData }}> {/* Update this line */}
+    <DataContext.Provider value={{ centerData, setCenterData, responseData, setResponseData, videoSelections, setVideoSelections, toggleVideo }}>
       {children}
     </DataContext.Provider>
   );
