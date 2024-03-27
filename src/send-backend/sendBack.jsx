@@ -2,20 +2,24 @@ import { useEffect, useState } from 'react';
 import { useData } from './dataContext';
 import { useCongestion } from '../Components/Congestion/CongestionContext';
 
-function VideoFrameSender({ videoElement, containerSize, onContainerCenterReceived, videoId }) {
+function VideoFrameSender({ videoElement, containerSize, videoId }) {
   const { updateCongestionState } = useCongestion(); // Using the context to get the update function
   const [isCongested, setIsCongested] = useState(false);
   const {setResponseData} = useData();
 
 
   const sendFrameAndSize = () => {
+    if (!videoElement) console.log(videoElement); // Check if videoElement is defined
+
+
+    console.log("Video Element: " + videoElement);
+    console.log("container size: " + containerSize);
+    console.log("Video ID: " + videoId);
     const canvas = document.createElement('canvas');
     canvas.width = videoElement.videoWidth;
     canvas.height = videoElement.videoHeight;
     const ctx = canvas.getContext('2d');
     ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
-    // console.log(JSON.stringify(containerSize));
-    // console.log(containerSize.width);
 
     canvas.toBlob(blob => {
       const formData = new FormData();
@@ -23,12 +27,6 @@ function VideoFrameSender({ videoElement, containerSize, onContainerCenterReceiv
       formData.append('video_id', videoId);
       formData.append('width', containerSize.width.toString());
       formData.append('height', containerSize.height.toString());
-     // formData.append('container_size', JSON.stringify(containerSize));
-    
-    //  console.log(videoId);
-    //  console.log(containerSize.width.toString());
-    //  console.log(containerSize.height.toString());
-
 
 
       fetch('http://localhost:5000/process', {

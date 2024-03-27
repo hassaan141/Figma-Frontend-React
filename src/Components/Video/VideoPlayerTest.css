@@ -13,7 +13,7 @@
   top: 7.2rem;
   left: 7.2rem;
   height: 84.5%;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   align-items: center; /* Center items vertically */
 
 }
@@ -31,7 +31,7 @@
 
 .img {
   margin-left: 25rem;
-  margin-top: 8rem;
+  margin-top: 22rem;
 }
 
 
@@ -42,7 +42,7 @@
   position: relative;
   padding-bottom: 56.25%; 
   overflow: hidden;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .video-container video {
@@ -55,15 +55,7 @@
 }
 
 
-
-
-/* .box.video-2 {
-  grid-template-columns: repeat(2, 1fr); 
-  grid-template-rows: 1fr;
-}
-
-
-.box.video-3 {
+/* .box.video-3 {
   grid-template-columns: repeat(2, 1fr); 
   grid-template-rows: repeat(2, 1fr);
 }
