@@ -22,13 +22,14 @@ function VideoPlayerTest() {
         )}
       
         {videoSelections.map((isSelected, index) => isSelected && (
-          <div key={index} className={`video video-${selectedVideosCount}`}>
-            <video autoPlay muted loop>
-              <source src={videoSources[index]} type="video/mp4" />
-              Your browser does not support the video tag.
-            </video> 
-          </div>
-        ))}
+  <div key={index} className="video-container">
+    <video autoPlay muted loop>
+      <source src={videoSources[index]} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video> 
+  </div>
+))}
+
       </div>
     </>
   );

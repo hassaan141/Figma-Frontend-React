@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './CameraLong.css';
 import img from './trash-2.svg';
 import cameraicon from './wall-camare.svg';
 import AddCameraModal from "../Camera/CameraModal";
 import greencircle from './greencircle.png';
 import redcircle from './redcircle.png';
+
+import CongestionDetection from '../Congestion/CongestionDetection';
+import { useCongestion } from '../Congestion/CongestionContext'
 import {useData} from '../../send-backend/dataContext'
 
 function CameraLong() {
@@ -12,6 +15,23 @@ function CameraLong() {
   const [rows, setRows] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
+  const [isCongested, setIsCongested] = useState(false);
+  const { congestionStates } = useCongestion();
+
+
+
+  // useEffect(() => {
+  //   // Assuming there's a way to determine which videoId you're interested in
+  //   const videoId = useCongestion.videoId; // Replace with actual logic
+  //   const videoIsCongested = congestionStates[videoId];
+  //   setIsCongested(videoIsCongested);
+  // }, [congestionStates]);
+
+  // const detectCongestion = () => {
+  //   // Assuming you have logic to detect congestion...
+  //   const congestionDetected = true;
+  //   setIsCongested(congestionDetected);
+  // };
 
   const toggleAddCamera = () => {
     setShowAddCamera(!showAddCamera);
@@ -55,7 +75,9 @@ function CameraLong() {
   };
 
   return (
-    <div className='eventBox'>
+    <>
+    {isCongested && <CongestionDetection videoId= {1} />}
+    <div className='eventBox' style={{ height: isCongested ? '50%' : '89%' }}>
       <div className='heading'>
         <h3 className='title'>Camera Monitoring List</h3>
         <img className='trashimg' onClick={toggleShowDelete} src={img} alt="" />
@@ -119,6 +141,7 @@ function CameraLong() {
         )}
       </div>
     </div>
+    </>
   );
 }
 

@@ -2,7 +2,7 @@ import React from 'react';
 import './CongestionDetection.css';
 import alerttriangle from './alert-triangle.png';
 
-function CongestionDetection() {
+function CongestionDetection( { videoId }) {
   
 
   return(
@@ -15,7 +15,7 @@ function CongestionDetection() {
             {/* <img/> */}
         </div>
         <div className= 'cameraNumber'>
-
+          {videoId && <span>Camera ID: {videoId}</span>}
         </div>
         <div className= 'reportNumber'>
             

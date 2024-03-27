@@ -1,13 +1,13 @@
 .eventBox{
   background: #151517;
-  height: 88%;
+  height: 88.8%;
   width: 22%;
   margin-top: 5rem;
   margin-left: 3.5rem;
   border-radius: 1rem;
   position: fixed;
   right: 1rem;
-  top: 0.8rem;
+  bottom: 0.8rem;
   align-items: center;
   justify-content: center;
   border: 1px solid #494949;
@@ -25,11 +25,6 @@ img{
   background: #151517;
 
 }
-
-.table-container{
-  border: 1px solid #494949;
-  height: 100vh;
-} 
 .title{
   background: #151517;
   color: white;
@@ -73,20 +68,16 @@ font-size: 0.8rem;
 
 }
 
-
-.list{
-  height: 70%;
-  width: 90%;
-margin-left: 5%;
-  background-color: #151517;
-}
-
 .table-container {
   color: white;
   border-radius: 8px;
-  width: fit-content; 
   margin: auto;
   background-color: #151517;
+  display: block;
+  height: 75%; /* Adjust this value as needed */
+  overflow-y: auto;
+  width: 85%;
+  border: 1px solid #494949;
 
 }
 
@@ -138,15 +129,6 @@ margin-left: 5%;
 .table-container td
 {
   background-color: #151517;
-}
-
-
-
-.table-container {
-  display: block;
-  height: 80%; /* Adjust this value as needed */
-  overflow-y: auto;
-  width: 80%;
 }
 
 .table-container thead, .table-container tbody tr {

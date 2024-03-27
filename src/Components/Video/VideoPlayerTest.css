@@ -13,53 +13,63 @@
   top: 7.2rem;
   left: 7.2rem;
   height: 84.5%;
+  border: 1px solid red;
+  align-items: center; /* Center items vertically */
+
 }
 
-/* Styling for when only one video is selected */
 .box.video-1 {
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
 }
 
-/* Styling for when two videos are selected */
 .box.video-2 {
-  grid-template-columns: repeat(2, 1fr); /* Two videos side by side */
-  grid-template-rows: 1fr;
+  grid-template-columns: repeat(2, 1fr); /* Keeps two videos side by side */
+  grid-template-rows: 1fr; /* Single row */
 }
 
-/* Styling for when three videos are selected */
-.box.video-3 {
-  grid-template-columns: repeat(2, 1fr); /* Adjust if you want a different layout */
-  grid-template-rows: repeat(2, 1fr);
-}
-
-/* Styling for when four videos are selected */
-.box.video-4 {
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-}
 
 .img {
-  /* grid-column: 1 / -1;  */
   margin-left: 25rem;
   margin-top: 8rem;
 }
 
-.video1, .video2, .video3, .video4 {
+
+
+
+.video-container {
+  /* flex: 1 1 45%; */
   position: relative;
-  width: 100%;
-  height: 100%;
+  padding-bottom: 56.25%; 
   overflow: hidden;
+  border: 1px solid green;
 }
 
-.video1 video, .video2 video, .video3 video, .video4 video {
+.video-container video {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 
 
+
+/* .box.video-2 {
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: 1fr;
+}
+
+
+.box.video-3 {
+  grid-template-columns: repeat(2, 1fr); 
+  grid-template-rows: repeat(2, 1fr);
+}
+
+
+.box.video-4 {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}  */
