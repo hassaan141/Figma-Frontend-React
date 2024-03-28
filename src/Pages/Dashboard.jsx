@@ -20,7 +20,6 @@ function Dashboard() {
       <VideoPlayerTest/>
       {/* <CameraShort/> */}
       <CameraList/>
-      <Reports/>
     </CongestionProvider>
     </DataProvider>
     </div>

@@ -6,18 +6,26 @@ import AddCameraModal from "../Camera/CameraModal";
 import greencircle from './greencircle.png';
 import redcircle from './redcircle.png';
 
-import CongestionDetection from '../Congestion/CongestionDetection';
 import { useCongestion } from '../Congestion/CongestionContext';
 import {useData} from '../../send-backend/dataContext';
-import congTest from '../Congestion/congTest'
+import CongTest from '../Congestion/congTest'
 
 function CameraLong() {
   const [showAddCamera, setShowAddCamera] = useState(false);
   const [rows, setRows] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
-  const [isCongested, setIsCongested] = useState(true);
-  const { congestionStates } = useCongestion();
+  const [isCongested, setIsCongested] = useState(false);
+
+  const { responseData } = useData();
+  
+
+  useEffect(() => {
+    if (responseData) { // Check if responseData is not null or undefined
+      responseData.success ? setIsCongested(true) : setIsCongested(false);
+    }
+  }, [responseData]);
+  
 
   const toggleAddCamera = () => {
     setShowAddCamera(!showAddCamera);
@@ -62,7 +70,7 @@ function CameraLong() {
 
   return (
     <>
-    {isCongested && <congTest/>}
+    {isCongested && <CongTest/>}
     <div className='eventBox' style={{ height: isCongested ? '42%' : '89%' }}>
       <div className='heading'>
         <h3 className='title'>Camera Monitoring List</h3>
