@@ -9,13 +9,13 @@ const NavItem = ({ icon }) => (
     <img src={icon} alt='' />
   </div>
 );
-const Top =()=> {
+const Top =({title})=> {
   const date = new Date();
   return (
     <nav className='top'>
       
       <h2>
-        Dashboard
+        {title}
       </h2>
 
       <div className = 'dateLineDiv'>

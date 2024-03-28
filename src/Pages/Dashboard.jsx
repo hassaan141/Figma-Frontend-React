@@ -14,7 +14,7 @@ function Dashboard() {
     <div>
     <DataProvider>
     <CongestionProvider>
-      <Top/>
+      <Top title ='Dashboard'/>
       <Navbar/>
       <Buttons/>
       <VideoPlayerTest/>
