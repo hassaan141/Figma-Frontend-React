@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './CameraLong.css';
+import './CameraList.css';
 import img from './trash-2.svg';
 import cameraicon from './wall-camare.svg';
 import AddCameraModal from "../Camera/CameraModal";

@@ -12,28 +12,34 @@ function VideoFrameSender({ videoElement, containerSize, videoId }) {
     if (!videoElement) console.log(videoElement); // Check if videoElement is defined
 
 
-    // console.log("Video Element: " + videoElement);
-    // console.log("container size: " + containerSize);
-    // console.log("Video ID: " + videoId);
+    console.log("Video Element: " + videoElement);
+    console.log("container size: " + containerSize);
+    console.log("Video ID: " + videoId);
+
+    console.log('----------------------------------------------------');
     const canvas = document.createElement('canvas');
     canvas.width = videoElement.videoWidth;
     canvas.height = videoElement.videoHeight;
     const ctx = canvas.getContext('2d');
     ctx.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
 
-    // console.log("VIDEO ELEMENT:" + videoElement)
-    // console.log("CANVAS WIDTH: " + videoElement.videoWidth)
-    // console.log("CANVAS HEIGHT: " + videoElement.videoHeight)
+    console.log('----------------------------------------------------');
+
+    console.log("VIDEO ELEMENT:" + videoElement)
+    console.log("CANVAS WIDTH: " + videoElement.videoWidth)
+    console.log("CANVAS HEIGHT: " + videoElement.videoHeight)
     canvas.toBlob(blob => {
       const formData = new FormData();
       formData.append('frame', blob, 'frame.jpg');
       formData.append('video_id', videoId);
-      formData.append('width', containerSize.width.toString());
-      formData.append('height', containerSize.height.toString());
+      formData.append('width', containerSize.width);
+      formData.append('height', containerSize.height);
 
-      // console.log("VIDEO ID: " + videoId);
-      // console.log("CONTAINER WIDTH :" + containerSize.width.toString());
-      // console.log("CONTAINER HEIGHT : " + containerSize.height.toString());
+
+      console.log('----------------------------------------------------');
+      console.log("VIDEO ID: " + videoId);
+      console.log("CONTAINER WIDTH :" + containerSize.width.toString());
+      console.log("CONTAINER HEIGHT : " + containerSize.height.toString());
 
 
       fetch('http://localhost:5000/process', {

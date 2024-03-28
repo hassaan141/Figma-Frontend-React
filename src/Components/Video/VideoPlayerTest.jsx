@@ -156,6 +156,17 @@ function VideoPlayerTest() {
           />
         );
       })}
+
+
+      {/* {activeVideos.map((videoElement, index) => (
+  !videoElement ? null :
+  <VideoFrameSender
+    key={index}
+    videoElement={videoElement}
+    containerSize={videoElement.getBoundingClientRect()}
+    videoId={`video-${index}`}
+  />
+))} */}
     </>
   );
 }
