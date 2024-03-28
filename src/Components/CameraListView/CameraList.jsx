@@ -42,6 +42,21 @@ function CameraLong() {
     setRows(rows.filter(row => row.id !== id));
   };
 
+  const intersections = [
+    "Dixie & Dundas",
+    "Rathburn & McLaughlin",
+    "Derry & McLaughlin",
+    "Derry & Mavis",
+    "Mavis & Courtney"
+  ];
+
+  const getRandomIntersection = () => {
+    // Get a random index based on the length of the intersections array
+    const randomIndex = Math.floor(Math.random() * intersections.length);
+    // Return the intersection name at the random index
+    return intersections[randomIndex];
+  };
+
   const addCamera = (cameraData) => {
     const newCamera = {
       id: rows.length + 1,
@@ -49,7 +64,7 @@ function CameraLong() {
       isChecked: false, // Initial state of checkbox is unchecked
       showVideo: false,
       monitor: "TC, AC, NM",
-      intersection: "Dixie & Dundas"
+      intersection: getRandomIntersection()
     };
     setRows([...rows, newCamera]);
     toggleAddCamera(); // Assuming this toggles the modal visibility

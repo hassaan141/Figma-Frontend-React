@@ -53,10 +53,14 @@
 }
 
 .formBox{
+
   background-color: #151517;
 
 }
 
+.dropDown{
+  background-color: #151517;
+}
 .cancel{
   border: 1px solid #494949;
 }

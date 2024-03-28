@@ -143,14 +143,19 @@ font-size: 0.8rem;
   height: 10px;
 }
 
-.-Button{
-  background: red;       /* No background */
-  color: inherit;         /* Inherits the color from its parent */
-  border: none;           /* No border */
-  border-radius: 40px;             /* No padding */
-  font: inherit;          /* Inherits font from its parent */
-  font-size: 8px;
+.-Button {
+  background: #b91a1a; /* Using a more neutral color, but feel free to change it */
+  color: white; /* White text color for better contrast */
+  border-radius: 5px; /* Smaller border-radius for a subtler rounded look */
+  padding: 2px 5px; 
+  margin-left: 1rem;
+  font-size: 14px; 
+  cursor: pointer; /* Changes the cursor on hover for better UX */
+  transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
 
+.-Button:hover {
+  background-color: red; /* Slightly darker shade on hover for feedback */
 }
 
 .header-item{
@@ -159,8 +164,7 @@ font-size: 0.8rem;
 
 /* .trashimg{
   border: 1px solid #494949;
-  height: fit-content;
-  width: fit-content;
-  align-items: center;
-  justify-content: center;
-} */
+  margin-top: 1rem;
+  margin-top: 2rem;
+ 
+}  */

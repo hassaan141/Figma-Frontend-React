@@ -32,14 +32,14 @@ function AddCameraModal({ show, onClose, addCamera }) {
             <h3 className="paragraph" >Camera Name</h3>
             <div className="paragraph">
                <select className='dropDown' name="camera" value={cameraData.camera} onChange={handleChange} >
-                <option value="" disabled>Select your option</option>
-                <option value="Camera 1">Camera 1</option>
-                <option value="Camera 2">Camera 2</option>
-                <option value="Camera 3">Camera 3</option>
-                <option value="Camera 4">Camera 4</option>
-                <option value="Camera 5">Camera 5</option>
-                <option value="Camera 6">Camera 6</option>
-                <option value="Camera 7">Camera 7</option>
+                <option className="paragraph" value="" disabled>Select your option</option>
+                <option className="paragraph" value="Camera 1">Camera 1</option>
+                <option className="paragraph" value="Camera 2">Camera 2</option>
+                <option className="paragraph" value="Camera 3">Camera 3</option>
+                <option className="paragraph" value="Camera 4">Camera 4</option>
+                <option className="paragraph" value="Camera 5">Camera 5</option>
+                <option className="paragraph" value="Camera 6">Camera 6</option>
+                <option className="paragraph" value="Camera 7">Camera 7</option>
               </select>
             </div>
             <h3 className="paragraph">Monitor</h3>
