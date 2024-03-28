@@ -42,7 +42,7 @@
   padding-bottom: 56.25%; 
   height: 0;
   overflow: hidden;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 }
 
 .video-container video {

@@ -40,13 +40,12 @@ border: 1px solid #494949;
 
   }
 
-.congestionVideo .smallVideo {
+.smallVideo {
     
     max-width: 65%; /* Adjust this value as needed */
     height: auto; /* This ensures the height adjusts proportionally to the width, maintaining aspect ratio */
     background:  #151517;
     border-radius: 0.5rem;
-    border: 1px red solid;
 
   }
 

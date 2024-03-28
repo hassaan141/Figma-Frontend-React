@@ -11,13 +11,28 @@ function CongTest() {
     if (responseData && responseData.success) {
       const event = {
         camera: responseData.data.video_id,
-        congType: responseData.data.is_congestion ? 'Yes' : 'No',
+        isCongestion: responseData.data.is_congestion ? 'Yes' : 'No',
         start: responseData.data.congestion_start_time,
         end: responseData.data.congestion_stop_time,
+        congType: responseData.data.congestion_level,
       };
       setNewEvent(event);
     }
   }, [responseData]);
+
+  // Function to determine border color based on congestion level
+  const getBorderColor = (congType) => {
+    switch(congType) {
+      case 'HIGH':
+        return 'red';
+      case 'MEDIUM':
+        return 'orange';
+      case 'LOW':
+        return 'yellow';
+      default:
+        return 'transparent'; // No border if the congType is not defined
+    }
+  };
 
   return (
     <div className='detectedDiv'>
@@ -27,8 +42,8 @@ function CongTest() {
         </div>
         
         <div className='congestionVideo'>
-          <video className='smallVideo' autoPlay muted loop>
-            <source src={`${process.env.PUBLIC_URL}/vid${1}.mp4`} type="video/mp4" />
+          <video className='smallVideo' autoPlay muted loop style={{border: `1px solid ${getBorderColor(newEvent.congType)}`}}>
+            <source src={`${process.env.PUBLIC_URL}/vid${parseInt(newEvent.camera) + 1}.mp4`} type="video/mp4" />
           </video>
         </div>
 

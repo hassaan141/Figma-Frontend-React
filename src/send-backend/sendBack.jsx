@@ -90,13 +90,13 @@ function VideoFrameSender({ videoElement, containerSize, videoId }) {
       if (isCongested) {
         switch(congestionLevel) {
           case "HIGH":
-            borderColor = '3px solid red';
+            borderColor = '1px solid red';
             break;
           case "MEDIUM":
-            borderColor = '3px solid orange';
+            borderColor = '1px solid orange';
             break;
           case "LOW":
-            borderColor = '3px solid yellow';
+            borderColor = '1px solid yellow';
             break;
           default:
             borderColor = 'none'; 
