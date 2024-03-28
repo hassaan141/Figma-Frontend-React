@@ -28,7 +28,7 @@ function CongTest() {
         
         <div className='congestionVideo'>
           <video className='smallVideo' autoPlay muted loop>
-            <source src={`${process.env.PUBLIC_URL}/vid${parseInt(newEvent.camera) + 1}.mp4`} type="video/mp4" />
+            <source src={`${process.env.PUBLIC_URL}/vid${1}.mp4`} type="video/mp4" />
           </video>
         </div>
 
