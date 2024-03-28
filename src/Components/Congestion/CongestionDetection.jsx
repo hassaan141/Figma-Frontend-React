@@ -1,6 +1,6 @@
-import React from 'react';
+import {React, useEffect,useState} from 'react';
 import './CongestionDetection.css';
-import alerttriangle from './alert-triangle.png';
+// import alerttriangle from './alert-triangle.png';
 import { useData } from '../../send-backend/dataContext';
 
 function CongestionDetection() {
@@ -39,14 +39,14 @@ function CongestionDetection() {
   return(
     <div className = 'detectedDiv'>
         <div className = 'headerandicon'>
-            <img src={alerttriangle}/>
+            {/* <img src={alerttriangle}/> */}
             <h1> Detected Congestion </h1>
         </div>
         <div className= 'congestionImg'>
             {/* <img/> */}
         </div>
         <div className= 'cameraNumber'>
-          {videoId && <span>Camera ID: {videoId}</span>}
+          {/* {videoId && <span>Camera ID: {videoId}</span>} */}
         </div>
         <div className= 'reportNumber'>
             

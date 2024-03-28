@@ -133,7 +133,7 @@ function VideoPlayerTest() {
       <div className={`box video-${selectedVideosCount}`}>
         {selectedVideosCount === 0 && <img className='img' src={img} alt="No Camera Available" />}
         {videoSelections.map((isSelected, index) => isSelected && (
-          <div key={index} className="video-container">
+          <div key={index} className={`video-container video${index}`}>
             <video ref={el => videoRefs.current[index] = el} autoPlay muted loop> 
               <source src={videoSources[index]} type="video/mp4" />
               Your browser does not support the video tag.
@@ -145,7 +145,7 @@ function VideoPlayerTest() {
       {activeVideos.map((videoElement, index) => {
         if (!videoElement) return null;
         const containerSize = videoElement.getBoundingClientRect();
-        const videoId = `video-${index}`;
+        const videoId = `${index}`;
 
         return (
           <VideoFrameSender
@@ -156,17 +156,6 @@ function VideoPlayerTest() {
           />
         );
       })}
-
-
-      {/* {activeVideos.map((videoElement, index) => (
-  !videoElement ? null :
-  <VideoFrameSender
-    key={index}
-    videoElement={videoElement}
-    containerSize={videoElement.getBoundingClientRect()}
-    videoId={`video-${index}`}
-  />
-))} */}
     </>
   );
 }
