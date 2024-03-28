@@ -62,7 +62,7 @@ align-items: center;
 /* gap: 10px; */
 color:white;
 border-radius: 6px;
-border: 1px solid var(--Black-darkmode-widgetborders-003, #29292C);
+border: 1px solid #494949;
 background: var(--Black-darkmode-widgetsurface-002, #151517);
 font-size: 0.8rem;
 

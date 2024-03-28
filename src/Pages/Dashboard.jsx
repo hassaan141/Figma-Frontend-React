@@ -19,7 +19,7 @@ function Dashboard() {
       <Buttons/>
       <VideoPlayerTest/>
       {/* <CameraShort/> */}
-      {/* <CameraList/> */}
+      <CameraList/>
       <Reports/>
     </CongestionProvider>
     </DataProvider>

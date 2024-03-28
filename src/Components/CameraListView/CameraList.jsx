@@ -7,31 +7,17 @@ import greencircle from './greencircle.png';
 import redcircle from './redcircle.png';
 
 import CongestionDetection from '../Congestion/CongestionDetection';
-import { useCongestion } from '../Congestion/CongestionContext'
-import {useData} from '../../send-backend/dataContext'
+import { useCongestion } from '../Congestion/CongestionContext';
+import {useData} from '../../send-backend/dataContext';
+import congTest from '../Congestion/congTest'
 
 function CameraLong() {
   const [showAddCamera, setShowAddCamera] = useState(false);
   const [rows, setRows] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
-  const [isCongested, setIsCongested] = useState(false);
+  const [isCongested, setIsCongested] = useState(true);
   const { congestionStates } = useCongestion();
-
-
-
-  // useEffect(() => {
-  //   // Assuming there's a way to determine which videoId you're interested in
-  //   const videoId = useCongestion.videoId; // Replace with actual logic
-  //   const videoIsCongested = congestionStates[videoId];
-  //   setIsCongested(videoIsCongested);
-  // }, [congestionStates]);
-
-  // const detectCongestion = () => {
-  //   // Assuming you have logic to detect congestion...
-  //   const congestionDetected = true;
-  //   setIsCongested(congestionDetected);
-  // };
 
   const toggleAddCamera = () => {
     setShowAddCamera(!showAddCamera);
@@ -76,13 +62,13 @@ function CameraLong() {
 
   return (
     <>
-    {isCongested && <CongestionDetection videoId= {1} />}
-    <div className='eventBox' style={{ height: isCongested ? '50%' : '89%' }}>
+    {isCongested && <congTest/>}
+    <div className='eventBox' style={{ height: isCongested ? '42%' : '89%' }}>
       <div className='heading'>
         <h3 className='title'>Camera Monitoring List</h3>
         <img className='trashimg' onClick={toggleShowDelete} src={img} alt="" />
       </div>
-        <table className="table-container" style={{ height: isCongested ? '50%' : '60%' }}>
+        <table className="table-container" style={{ height: isCongested ? '50%' : '80%' }}>
           <thead>
             <tr className="camera-header">
               <th>

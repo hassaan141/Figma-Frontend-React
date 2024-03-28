@@ -1,5 +1,4 @@
 .detectedDiv{
-border: 1px solid var(--Black-darkmode-widgetborders-003, #29292C);
 background:  #151517;
 
 position: fixed;
@@ -8,7 +7,10 @@ right: 0.5rem;
 width: 22%;
 margin-right: 0.5%;
 height: fit-content;
+align-items: center;
+justify-content: center;
 border-radius: 12px;
+border: 1px solid #494949;
 }
 
 .headerandicon{
@@ -22,8 +24,8 @@ border-radius: 12px;
 .title{
     background:  #151517;
     padding-left: 1rem;
-    font-weight: 700;
-    font-size: 2rem;
+    font-weight: 500;
+    font-size: 1.5rem;
 
 }
 
@@ -82,19 +84,19 @@ border-radius: 12px;
     color: var(--Grey-darkmode-ghost-001, #9E9E9E);
 /* large */
 
-font-size: 17px;
+font-size: 0.8rem;
 font-style: normal;
 font-weight: 600;
-line-height: 28px;
+/* line-height: 28px; */
 }
 
 .descrip{
     color: var(--White-lightmode-surface-001, #FAFCFF);
 
-font-size: 16px;
+    font-size: 0.8rem;
 font-style: normal;
 font-weight: 600;
-line-height: 28px; /* 155.556% */
+/* line-height: 28px;  */
 padding: 0.5rem 0rem;
 }
 
@@ -109,6 +111,11 @@ padding: 0.5rem 0rem;
 .dispatch{
     color: black;
     background-color: rgb(214, 48, 48);
+}
+
+.clean{
+  background-color: #151517;
+  border: 1px solid #494949;
 }
 
 .buttonss{

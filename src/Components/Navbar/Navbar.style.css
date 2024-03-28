@@ -20,7 +20,7 @@
   align-items: center;
   flex-shrink: 0;
   border-radius: 8px;
-  border: 2px solid var(--Black-darkmode-widgetborders-003, #29292C);
+  border: 1px solid #494949;
   background: var(--Black-darkmode-widgetsurface-002, #151517);
   margin-top: 0.8%;
   /* border: 2px solid red; */
