@@ -6,6 +6,7 @@ import CameraList from '../Components/CameraListView/CameraList';
 import Buttons from '../Components/LoneButtons/Buttons' 
 import { DataProvider } from '../send-backend/dataContext';
 import { CongestionProvider } from '../Components/Congestion/CongestionContext';
+import Reports from '../Components/Congestion/congTest';
 
 
 function Dashboard() {
@@ -13,12 +14,13 @@ function Dashboard() {
     <div>
     <DataProvider>
     <CongestionProvider>
-    <Top/>
-    <Navbar/>
-    <Buttons/>
-    <VideoPlayerTest/>
-    {/* <CameraShort/> */}
-    <CameraList/>
+      <Top/>
+      <Navbar/>
+      <Buttons/>
+      <VideoPlayerTest/>
+      {/* <CameraShort/> */}
+      {/* <CameraList/> */}
+      <Reports/>
     </CongestionProvider>
     </DataProvider>
     </div>

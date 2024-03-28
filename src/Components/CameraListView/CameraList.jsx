@@ -82,7 +82,7 @@ function CameraLong() {
         <h3 className='title'>Camera Monitoring List</h3>
         <img className='trashimg' onClick={toggleShowDelete} src={img} alt="" />
       </div>
-        <table className="table-container">
+        <table className="table-container" style={{ height: isCongested ? '50%' : '60%' }}>
           <thead>
             <tr className="camera-header">
               <th>

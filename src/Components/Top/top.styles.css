@@ -16,6 +16,8 @@
   top: 0;
   right: 0;
 border-radius: 8px;
+border: 2px solid var(--Black-darkmode-widgetborders-003, #29292C);
+
 /* border: 2px solid var(--Black-darkmode-widgetborders-003, #29292C); */
 /* background: var(--Black-darkmode-widgetsurface-002, #151517); */
 }

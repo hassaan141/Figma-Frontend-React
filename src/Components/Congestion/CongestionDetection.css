@@ -1,12 +1,117 @@
 .detectedDiv{
-    border: 1px solid var(--Black-darkmode-widgetborders-003, #29292C);
-background: var(--Black-darkmode-widgetsurface-002, #151517);
+border: 1px solid var(--Black-darkmode-widgetborders-003, #29292C);
+background:  #151517;
 
 position: fixed;
-top: 7rem;
+top: 6rem;
 right: 0.5rem;
 width: 22%;
 margin-right: 0.5%;
-height: 40%;
+height: fit-content;
 border-radius: 12px;
+}
+
+.headerandicon{
+    background:  #151517;
+    display: flex;
+    padding-left: 1rem;
+    padding-top: 0.6rem;
+
+}
+
+.title{
+    background:  #151517;
+    padding-left: 1rem;
+    font-weight: 700;
+    font-size: 2rem;
+
+}
+
+.congestionVideo{
+
+    background:  #151517;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+  }
+
+.congestionVideo .smallVideo {
+    
+    max-width: 65%; /* Adjust this value as needed */
+    height: auto; /* This ensures the height adjusts proportionally to the width, maintaining aspect ratio */
+    background:  #151517;
+    border-radius: 0.5rem;
+    border: 1px red solid;
+
+  }
+
+  .cameraNumber{
+    display: flex;
+    background:  #151517;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+
+  }
+
+  .reportNumber{
+    display: flex;
+    background:  #151517;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+
+  }
+
+  .congestionLocation{
+    display: flex;
+    background:  #151517;
+    justify-content: space-between;
+    padding: 0rem 1rem;
+
+  }
+
+  .congestionButtons{
+    margin-top: 1rem;
+    background:  #151517;
+
+  }
+  
+.details{
+    color: var(--Grey-darkmode-ghost-001, #9E9E9E);
+/* large */
+
+font-size: 17px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px;
+}
+
+.descrip{
+    color: var(--White-lightmode-surface-001, #FAFCFF);
+
+font-size: 16px;
+font-style: normal;
+font-weight: 600;
+line-height: 28px; /* 155.556% */
+padding: 0.5rem 0rem;
+}
+
+.congestionButtons{
+    display: flex;
+    justify-content: space-between;
+    padding: 0rem 0.5rem;
+    padding-bottom: 0.5rem;
+
+}
+
+.dispatch{
+    color: black;
+    background-color: rgb(214, 48, 48);
+}
+
+.buttonss{
+    width: 12rem;
+    height: 2.5rem;
 }
