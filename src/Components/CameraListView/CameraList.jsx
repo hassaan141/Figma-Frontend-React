@@ -10,7 +10,7 @@ import { useCongestion } from '../Congestion/CongestionContext';
 import {useData} from '../../send-backend/dataContext';
 import CongTest from '../Congestion/congTest'
 
-function CameraLong() {
+function CameraList() {
   const [showAddCamera, setShowAddCamera] = useState(false);
   const [rows, setRows] = useState([]);
   const [allChecked, setAllChecked] = useState(false);
@@ -18,6 +18,7 @@ function CameraLong() {
   const [isCongested, setIsCongested] = useState(false);
 
   const { responseData } = useData();
+
   
 
   useEffect(() => {
@@ -44,10 +45,15 @@ function CameraLong() {
 
   const intersections = [
     "Dixie & Dundas",
-    "Rathburn & McLaughlin",
-    "Derry & McLaughlin",
+    "King & Spadina",
+    "Mavis & Twen",
     "Derry & Mavis",
-    "Mavis & Courtney"
+    "Lint & Power",
+    "Fir & Spruce",
+    "Elm & Birch",
+    "Maple & Oak",
+    "Hazel & Ivy",
+    "Cedar & Pine"
   ];
 
   const getRandomIntersection = () => {
@@ -154,4 +160,4 @@ function CameraLong() {
   );
 }
 
-export default CameraLong;
+export default CameraList;

@@ -14,11 +14,10 @@ function Dashboard() {
     <div>
     <DataProvider>
     <CongestionProvider>
-      <Top title ='Dashboard'/>
+      <Top title ='Congestion AI'/>
       <Navbar/>
       <Buttons/>
       <VideoPlayerTest/>
-      {/* <CameraShort/> */}
       <CameraList/>
     </CongestionProvider>
     </DataProvider>

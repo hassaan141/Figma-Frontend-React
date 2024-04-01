@@ -42,8 +42,8 @@ function CongTest() {
         </div>
         
         <div className='congestionVideo'>
-          <video className='smallVideo' autoPlay muted loop style={{border: `1px solid ${getBorderColor(newEvent.congType)}`}}>
-            <source src={`${process.env.PUBLIC_URL}/vid${parseInt(newEvent.camera) + 1}.mp4`} type="video/mp4" />
+          <video className='smallVideo' autoPlay muted loop style={{border: `1px solid red`}}>
+            <source src={`${process.env.PUBLIC_URL}/vid${1}.mp4`} type="video/mp4" />
           </video>
         </div>
 
