@@ -1,28 +1,40 @@
 import React, { useState } from "react";
 import "./CameraModal.css";
 
-
 function AddCameraModal({ show, onClose, addCamera }) {
   const [cameraData, setCameraData] = useState({
     camera: '',
     monitor: [],
-  });  
-  if (show) return null;
-  
-    const handleChange = (e) => {
-      const { name, value } = e.target;
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    if (type === "checkbox") {
+      // Handle checkbox changes
+      const newMonitorValues = checked 
+        ? [...cameraData.monitor, value] // Add checkbox value if checked
+        : cameraData.monitor.filter(v => v !== value); // Remove checkbox value if not checked
+
+      setCameraData({ ...cameraData, monitor: newMonitorValues });
+    } else {
+      // Handle other inputs (e.g., select dropdown)
       setCameraData({ ...cameraData, [name]: value });
-    };
-  
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      // Call the addCamera function with cameraData
-      addCamera(cameraData);
-    };
-  
-    return (
-      <>
-        <div className="modal-backdrop" onClick={onClose} />
+    }
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Here we keep monitor as an array, assuming addCamera can handle it.
+    // If not, convert it to a string or another format as needed.
+    addCamera(cameraData);
+    onClose();
+  };
+
+  if (show) return null;
+
+  return (
+    <>
+      <div className="modal-backdrop" onClick={onClose} />
         <div className="modal-container">
           <div className="modal-content">
             <h3 className="formBox" >Add New Camera</h3>
@@ -44,14 +56,14 @@ function AddCameraModal({ show, onClose, addCamera }) {
             </div>
             <h3 className="paragraph">Monitor</h3>
             <div  className="MonitorCheckbox">
-            <label className="paragraph"><input className="label" type="checkbox"/>Select All</label>
-            <label className="paragraph"><input className="label" type="checkbox" />Traffic Congestion</label>
-            <label className="paragraph"><input className="label" type="checkbox"/>Road Accidents</label>
-            <label className="paragraph"><input className="label" type="checkbox"/>Near Misses</label>
-            <label className="paragraph"><input className="label" type="checkbox"/>Pedestrian Flow</label>
-            <label className="paragraph"><input className="label" type="checkbox"/>Bicycle Traffic</label>
-            <label className="paragraph"><input className="label" type="checkbox" />Emergency Vehicles</label>
-            <label className="paragraph"><input className="label" type="checkbox" />Public Transport</label>
+            <label className="paragraph"><input className="label" name="monitor" type="checkbox"/>Select All</label>
+            <label className="paragraph"><input className="label" name="monitor" value='TC' type="checkbox" onChange={handleChange}/>Traffic Congestion</label>
+            <label className="paragraph"><input className="label" name="monitor" value='RA' type="checkbox" onChange={handleChange}/>Road Accidents</label>
+            <label className="paragraph"><input className="label" name="monitor" value='NM' type="checkbox" onChange={handleChange}/>Near Misses</label>
+            <label className="paragraph"><input className="label" name="monitor" value='PF' type="checkbox" onChange={handleChange}/>Pedestrian Flow</label>
+            <label className="paragraph"><input className="label" name="monitor" value='BT' type="checkbox" onChange={handleChange}/>Bicycle Traffic</label>
+            <label className="paragraph"><input className="label" name="monitor" value='EV' type="checkbox" onChange={handleChange}/>Emergency Vehicles</label>
+            <label className="paragraph"><input className="label" name="monitor" value='PT' type="checkbox" onChange={handleChange}/>Public Transport</label>
             </div>
 
             <div className="buttons">
@@ -62,8 +74,8 @@ function AddCameraModal({ show, onClose, addCamera }) {
             </form>
           </div>
         </div>
-      </>
-    );
-  }
+        </>
+  );
+}
 
-  export default AddCameraModal;
+export default AddCameraModal;
