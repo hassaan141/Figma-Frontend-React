@@ -10,7 +10,7 @@ function DateDownloadButton() {
     <div className='DateDownloadDiv'>
       <div className='leftSide'>
         <p className='DateButton'>
-        <img className = "CalenderImage" src={calenderimg} alt="Clock" /> June 30th, 2023- August 30th, 2023
+        <img className = "CalenderImage" src={calenderimg} alt="Clock" /> June 30th, 2023 - August 30th, 2023
         </p>
       </div>
       

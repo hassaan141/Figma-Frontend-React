@@ -17,10 +17,11 @@
     background-color: black;
     border-radius: 0.5rem;
     position: fixed;
-    padding: 0.6rem;
+    padding: 0.5rem;
     right: 12%;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     top: 10.5%;
+    display: flex;
     
   }
 
@@ -31,12 +32,17 @@
     position: fixed;
     top: 12%;
     right: 2%;
+    display: flex;
 
   }
 
   .DownloadImageMonitoringList{
     background-color: #42bb1d;
     padding-right: 0.5rem;
+  }
+  .CalenderImageMonitoringList{
+    padding-right: 0.5rem;
+    background-color: black;
   }
 
 .MonitoringListTableDiv {

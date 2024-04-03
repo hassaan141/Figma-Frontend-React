@@ -53,7 +53,7 @@ function MonitoringList() {
     return (
         <div className='EntireMonitoringDiv'>
             <p className='DatepMonitoringList'>
-            <img className="CalenderImageMonitoringList" src={calenderimg} alt="calendar" /> June 30th, 2023- August 30th, 2023
+            <img className="CalenderImageMonitoringList" src={calenderimg} alt="calendar" /> June 30th, 2023 - August 30th, 2023
             </p>
             <button className='DownloadButtonMonitoringList'>
             <img className="DownloadImageMonitoringList" src={download} alt="download" /> Download Selected
