@@ -17,11 +17,13 @@ function MonitoringList() {
 
     const [selectedEntry, setSelectedEntry] = useState(null);
 
-    const handleRowClick = (entry) => {
+    const handleRowClick = (entry, event) => {
+        if (event.target.type === 'checkbox' || event.target.closest('input[type="checkbox"]')) {
+          return; 
+        }
         setSelectedEntry(entry);
       };
       
-
     const list_entries = [
         { id: 230001, alert_type: 'Traffic Congestion', scale : 'high', time_of_detection: '12:00:00 PM', camera: '02', date_of_detection: '07/05/2023' },
         { id: 230002, alert_type: 'Traffic Congestion', scale : 'high', time_of_detection: '12:00:00 PM', camera: '32', date_of_detection: '07/05/2023' },
@@ -73,7 +75,8 @@ function MonitoringList() {
                 </thead>
                 <tbody>
                 {list_entries.map(entry => (
-                    <tr className = 'entries' key={entry.id} onClick={() => handleRowClick(entry)}>
+                    
+                    <tr key={entry.id} onClick={(e) => handleRowClick(entry, e)}>
                     <td><input type="checkbox" className=""/>{entry.id}</td>
                     <td>{entry.alert_type}</td>
                     <td>
