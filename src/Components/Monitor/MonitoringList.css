@@ -117,24 +117,29 @@
   display: flex;
   width: fit-content;
 align-items: center;
-gap: 12px;
+background-color: #151517;
 }
 
 .reportDetails{
   display: flex;
-/* width: 626px;
-height: 413px;
-padding: 10px 0px; */
 width: 30%;
 flex-direction: column;
-/* align-items: flex-start;
-gap: 16px; */
+align-items: flex-start;
+border: 1px solid red;
+}
+.ReportImage{
+  border: 1px solid red;
+}
+
+.reportDetails p{
+  background-color: #151517;
 }
 
 .reportDetailsHeader{
   display: flex;
 align-items: center;
 align-self: stretch;
+background-color: #151517;
 }
 
 
@@ -143,6 +148,7 @@ align-self: stretch;
 justify-content: space-between;
 align-items: center;
 flex-shrink: 0;
+background-color: #151517;
 align-self: stretch;
 }
 
@@ -152,4 +158,61 @@ justify-content: space-between;
 /* align-items: center;
 align-self: stretch; */
 width: 96%;
+    background-color: #151517;
+    margin-left: 2%;
+
+}
+
+.LighterColorP{
+  color: var(--Grey-darkmode-ghost-001, #9E9E9E);
+/* large */
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+}
+
+.DarkerP{
+  color: var(--White-lightmode-surface-001, #FAFCFF);
+/* large */
+font-family: Inter;
+font-size: 18px;
+font-style: normal;
+font-weight: 600;
+}
+
+.ReportID{
+  color: var(--White-Lightmode-Lightmode-surface-001, #FAFCFF);
+text-align: center;
+/* h2 */
+font-family: Inter;
+font-size: 4rem;
+font-style: normal;
+font-weight: 600;
+letter-spacing: -0.225px;
+}
+
+.ReportBackButton{
+  width: 2rem;
+  height: 2rem;
+}
+
+.ReportDownloadButton{
+  width: 2rem;
+  height: 2rem;
+  margin-right: 2%;
+}
+
+.BackButtonAndReportIDAndDownloadButton{
+  display: flex;
+justify-content: space-between;
+align-items: center;
+align-self: stretch;
+background-color: #151517;
+
+}
+
+
+.horizontalLine{
+  width: 96%;
 }

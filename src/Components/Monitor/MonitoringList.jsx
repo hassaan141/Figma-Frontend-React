@@ -2,6 +2,7 @@ import { React, useState } from 'react';
 import './MonitoringList.css';
 import calenderimg from './calendar-days.svg';
 import download from './download.svg';
+import downloadindividual from './downloadindividual.svg';
 import highshield from './shield-alert-high.svg';
 import mediumshield from './shield-alert-medium.svg';
 import lowshield from './shield-alert-low.svg';
@@ -49,47 +50,51 @@ function MonitoringList() {
     if (selectedEntry) {
         return (
           <div className = 'MonitoringReportDiv'>
+          <div className = 'BackButtonAndReportIDAndDownloadButton'>
             <div className = 'BackButtonAndReportID'>
             <img className="ReportBackButton" src={left} onClick={() => setSelectedEntry(null)}/>
-            <h1> {selectedEntry.id}</h1>
+            <h2 className= 'ReportID'> {selectedEntry.id}</h2>
+            </div>
+            <img className="ReportDownloadButton" src={downloadindividual} onClick={() => setSelectedEntry(null)}/>
             </div>
             <div className = 'ReportDetailsAndImage'>
             <img className = 'ReportImage' src={reportImage}/>
             <div className = 'reportDetails'>
                 <div className = 'reportDetailsHeader'> Details </div>
                 <div className = 'AlertTypeReport'> 
-                    <p>Alert Type</p>
-                    <p>{selectedEntry.alert_type}</p>
+                    <p className = 'LighterColorP'>Alert Type</p>
+                    <p className =  'DarkerP'>{selectedEntry.alert_type}</p>
                 </div>
                 <div className = 'CameraNumberReport'>
-                    <p>Camera</p>
-                    <p>{selectedEntry.camera}</p>
+                    <p className = 'LighterColorP'>Camera</p>
+                    <p className =  'DarkerP'>{selectedEntry.camera}</p>
                 </div>
                 <div className = 'DateOfDetectionReport'>
-                    <p>Date of Detection</p>
-                    <p>{selectedEntry.date_of_detection}</p>
+                    <p className = 'LighterColorP'>Date of Detection</p>
+                    <p className =  'DarkerP'>{selectedEntry.date_of_detection}</p>
                 </div>
                 <div className = 'TimeOfDetectionReport'>
-                    <p>Time of Detection</p>
-                    <p>{selectedEntry.time_of_detection}</p>
+                    <p className = 'LighterColorP'>Time of Detection</p>
+                    <p className =  'DarkerP'>{selectedEntry.time_of_detection}</p>
                 </div>
                 <div className = 'DurationReport'>
-                    <p>Duration</p>
-                    <p>00.22.32</p>
+                    <p className = 'LighterColorP'>Duration</p>
+                    <p className =  'DarkerP'>00.22.32</p>
                 </div>
                 <div className = 'LocationReport'>
-                    <p>Location</p>
-                    <p>Dixie & Dundas</p>
+                    <p className = 'LighterColorP'>Location</p>
+                    <p className =  'DarkerP'>Dixie & Dundas</p>
                 </div>
                 <div className = 'Scale'>
-                    <p>Scale</p>
-                    <p>
+                    <p className = 'LighterColorP'>Scale</p>
+                    <p className =  'DarkerP'>
                     <img src={getShieldImage(selectedEntry.scale)} alt={`${selectedEntry.scale} shield`} style={{ backgroundColor: '#151517', marginRight: '0.5rem' }} />
                     {selectedEntry.scale}
                     </p>
                 </div>
             </div>
             </div>
+            <hr className = 'horizontalLine' />
           </div>
         );
       }
