@@ -3,7 +3,7 @@ import Navbar from '../Components/Navbar/Navbar';
 import Top from '../Components/Top/top';
 import MonitoringList from "../Components/Monitor/MonitoringList"
 
-function Monitor() {
+function MonitorList() {
   return (
     <>
       <Top title='Monitoring List'/>
@@ -13,4 +13,4 @@ function Monitor() {
   )
 }
 
-export default Monitor
+export default MonitorList

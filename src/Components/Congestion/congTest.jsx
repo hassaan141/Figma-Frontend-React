@@ -3,10 +3,13 @@ import './CongestionDetection.css';
 import alerttriangle from './alert-triangle.png';
 import { useData } from '../../send-backend/dataContext';
 
-function CongTest() {
+function CongTest({ cameraRows }) {
   const { responseData } = useData();
+  const { checkCong } = useData();
   const [newEvent, setNewEvent] = useState({});
+  const [matchedIntersection, setMatchedIntersection] = useState('');
 
+  console.log()
   useEffect(() => {
     if (responseData && responseData.success) {
       const event = {
@@ -17,23 +20,21 @@ function CongTest() {
         congType: responseData.data.congestion_level,
       };
       setNewEvent(event);
+      
+      // Attempt to match the camera ID with one from the cameraRows to find the intersection
+      const matchedRow = cameraRows.find(row => row.camera === event.camera);
+      if (matchedRow) {
+        setMatchedIntersection(matchedRow.intersection);
+      }
     }
-  }, [responseData]);
+  }, [responseData, cameraRows]); // Include cameraRows in dependency array
 
-  // Function to determine border color based on congestion level
-  const getBorderColor = (congType) => {
-    switch(congType) {
-      case 'HIGH':
-        return 'red';
-      case 'MEDIUM':
-        return 'orange';
-      case 'LOW':
-        return 'yellow';
-      default:
-        return 'transparent'; // No border if the congType is not defined
-    }
+  const closeButton = () => {
+    checkCong(false);
   };
 
+
+  
   return (
     <div className='detectedDiv'>
         <div className='headerandicon'>
@@ -49,7 +50,7 @@ function CongTest() {
 
         <div className='cameraNumber'>
           <h6 className='details'>Camera</h6>
-          <h6 className='descrip'>{newEvent.camera}</h6>
+          <h6 className='descrip'>{cameraRows[0].camera}</h6>
         </div>
 
         <div className='reportNumber'>
@@ -59,12 +60,12 @@ function CongTest() {
 
         <div className='congestionLocation'>
            <h6 className='details'>Location</h6>
-           <h6 className='descrip'>Dixie & McLaughlin</h6>
+           <h6 className='descrip'>{cameraRows[0].intersection}</h6>
         </div>
 
         <div className='congestionButtons'>
-            <button className='clean buttonss'> Clean Alert </button>
-            <button className='dispatch buttonss'> Contact Dispatch </button>
+            <button onClick={closeButton} className='clean buttonss'> Clean Alert </button>
+            <button onClick={closeButton} className='dispatch buttonss'> Contact Dispatch </button>
         </div>
     </div>
   );
