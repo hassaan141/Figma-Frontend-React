@@ -7,6 +7,7 @@ export const DataProvider = ({ children }) => {
   const [responseData, setResponseData] = useState(null); 
   const [videoSelections, setVideoSelections] = useState([false, false, false, false]);
   const [cong, checkCong] = useState(false)
+  const [selectedView, setSelectedView] = useState('')
 
   const toggleVideo = (index) => {
     setVideoSelections(prev => {
@@ -16,7 +17,7 @@ export const DataProvider = ({ children }) => {
     });
 };
   return (
-    <DataContext.Provider value={{ centerData, setCenterData, responseData, setResponseData, videoSelections, setVideoSelections, toggleVideo, cong, checkCong}}>
+    <DataContext.Provider value={{ centerData, setCenterData, responseData, setResponseData, videoSelections, setVideoSelections, toggleVideo, cong, checkCong, selectedView, setSelectedView}}>
       {children}
     </DataContext.Provider>
   );

@@ -16,15 +16,21 @@
     background-color: #000000;
     color: white;
     border: 1px solid #494949;
+    border-radius: 0.5rem;
 }
 
 .locations{
     display: inline-flex;
     padding: 7px 14px;
-justify-content: center;
-align-items: center;
-gap: 8px;
-background-color: #000000;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    background-color: #000000;
     color: white;
     border: 1px solid #494949;
+}
+
+.dropDownView{
+    border: none;
+
 }

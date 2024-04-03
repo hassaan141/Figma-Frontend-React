@@ -5,7 +5,7 @@ import { useData } from '../../send-backend/dataContext';
 import VideoFrameSender from '../../send-backend/sendBack';
 
 function VideoPlayerTest() {
-  const { videoSelections } = useData();
+  const { videoSelections, selectedView, setSelectedView } = useData();
   const videoRefs = useRef([]);
   const [activeVideos, setActiveVideos] = useState([]);
   const selectedVideosCount = videoSelections.filter(Boolean).length;
@@ -15,6 +15,7 @@ function VideoPlayerTest() {
     `${process.env.PUBLIC_URL}/test_4.mp4`,
     `${process.env.PUBLIC_URL}/vid3.mp4`
   ];
+  let videoPlaying = null;
 
   useEffect(() => {
     const filteredVideos = videoSelections
@@ -26,6 +27,7 @@ function VideoPlayerTest() {
   return (
     <>
       <div className={`box video-${selectedVideosCount}`}>
+
         {selectedVideosCount === 0 && <img className='img' src={img} alt="No Camera Available" />}
         {videoSelections.map((isSelected, index) => isSelected && (
           <div key={index} className={`video-container video${index}`}>
